@@ -5,45 +5,108 @@ import Header from '../components/Header.astro';
 import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 ---
 
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 	<head>
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
 	</head>
 	<body>
 		<Header />
+
 		<main>
-			<h1>🧑‍🚀 Hello, Astronaut!</h1>
-			<p>
-				Welcome to the official <a href="https://astro.build/">Astro</a> blog starter template. This
-				template serves as a lightweight, minimally-styled starting point for anyone looking to build
-				a personal website, blog, or portfolio with Astro.
-			</p>
-			<p>
-				This template comes with a few integrations already configured in your
-				<code>astro.config.mjs</code> file. You can customize your setup with
-				<a href="https://astro.build/integrations">Astro Integrations</a> to add tools like Tailwind,
-				React, or Vue to your project.
-			</p>
-			<p>Here are a few ideas on how to get started with the template:</p>
-			<ul>
-				<li>Edit this page in <code>src/pages/index.astro</code></li>
-				<li>Edit the site header items in <code>src/components/Header.astro</code></li>
-				<li>Add your name to the footer in <code>src/components/Footer.astro</code></li>
-				<li>Check out the included blog posts in <code>src/content/blog/</code></li>
-				<li>Customize the blog post page layout in <code>src/layouts/BlogPost.astro</code></li>
-			</ul>
-			<p>
-				Have fun! If you get stuck, remember to
-				<a href="https://docs.astro.build/">read the docs</a>
-				or <a href="https://astro.build/chat">join us on Discord</a> to ask questions.
-			</p>
-			<p>
-				Looking for a blog template with a bit more personality? Check out
-				<a href="https://github.com/Charca/astro-blog-template">astro-blog-template</a>
-				by <a href="https://twitter.com/Charca">Maxi Ferreira</a>.
-			</p>
+			<hero-section>
+				<h2>Can We Build It? Yes We Can! 🏗️</h2>
+				<p>Welcome to Bob's construction headquarters! Here you'll find building tips, project updates, and all the wisdom you need to tackle any construction challenge.</p>
+			</hero-section>
+
+			<construction-motto>
+				"Measure twice, cut once, and always wear your safety gear!" 
+				<span class="tools">🔨</span>
+				<span class="tools">🪚</span>
+				<span class="tools">🔧</span>
+			</construction-motto>
+
+			<section id="blog">
+				<h2 style="color: var(--construction-orange); font-size: 2.2rem; text-align: center; margin-bottom: 2rem;">Latest from the Construction Site 📰</h2>
+				
+				<blog-grid>
+					<blog-post>
+						<h3>Building the Perfect Toolshed</h3>
+						<time datetime="2024-07-25">July 25, 2024</time>
+						<p>Every builder needs a proper toolshed! Today I'll walk you through the step-by-step process of constructing a durable, organized workspace that will keep your tools safe and accessible. From foundation to roof, we'll cover all the essential techniques.</p>
+					</blog-post>
+
+					<blog-post>
+						<h3>Safety First: Essential PPE for Every Job</h3>
+						<time datetime="2024-07-22">July 22, 2024</time>
+						<p>Safety should never be an afterthought on any construction site. In this post, I'll cover the essential personal protective equipment every builder should have, from hard hats to steel-toed boots. Remember, we can fix it, but safety comes first!</p>
+					</blog-post>
+
+					<blog-post>
+						<h3>Concrete Fundamentals: Mixing and Pouring</h3>
+						<time datetime="2024-07-20">July 20, 2024</time>
+						<p>A strong foundation starts with properly mixed concrete. Join me as I demonstrate the correct ratios, mixing techniques, and pouring methods that ensure your projects stand the test of time. Scoop and Muck would be proud!</p>
+					</blog-post>
+
+					<blog-post>
+						<h3>Teamwork Makes the Dream Work</h3>
+						<time datetime="2024-07-18">July 18, 2024</time>
+						<p>No construction project is a one-person job! Learn how effective communication, task delegation, and team coordination can turn any challenging build into a smooth operation. Wendy always says teamwork is key!</p>
+					</blog-post>
+				</blog-grid>
+			</section>
+
+			<tool-tip>
+				Always check your measurements three times before making any cuts. A small mistake early on can become a big problem later!
+			</tool-tip>
+
+			<project-showcase id="projects">
+				<h2>Featured Construction Projects 🏗️</h2>
+				<project-grid>
+					<project-card>
+						<span class="emoji">🏠</span>
+						<h4>Sunflower Valley School</h4>
+						<p>A complete renovation of the local school, featuring new classrooms, a modern playground, and energy-efficient systems.</p>
+					</project-card>
+
+					<project-card>
+						<span class="emoji">🌉</span>
+						<h4>Community Bridge Repair</h4>
+						<p>Structural reinforcement and safety upgrades to the main bridge connecting our neighborhoods.</p>
+					</project-card>
+
+					<project-card>
+						<span class="emoji">🏗️</span>
+						<h4>Town Hall Expansion</h4>
+						<p>Adding a new wing to accommodate the growing community needs while preserving historical architecture.</p>
+					</project-card>
+
+					<project-card>
+						<span class="emoji">🚧</span>
+						<h4>Road Construction Project</h4>
+						<p>Paving new roads and improving infrastructure to support the town's development and traffic flow.</p>
+					</project-card>
+				</project-grid>
+			</project-showcase>
+
+			<tool-tip>
+				When working with power tools, always ensure they're properly maintained and inspected before each use. A well-maintained tool is a safe tool!
+			</tool-tip>
+
+			<section id="tools" style="background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+				<h2 style="color: var(--safety-blue); text-align: center; margin-bottom: 1.5rem;">Essential Tools in Bob's Toolbox 🧰</h2>
+				<p style="text-align: center; font-size: 1.1rem; color: #555;">From hammers to hard hats, every tool has its purpose. Here are the must-haves for any construction project:</p>
+				
+				<ul style="list-style: none; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-top: 2rem; text-align: center;">
+					<li style="padding: 1rem; background: var(--primary-yellow); border-radius: 10px;">🔨 Hammer</li>
+					<li style="padding: 1rem; background: var(--primary-yellow); border-radius: 10px;">🪚 Saw</li>
+					<li style="padding: 1rem; background: var(--primary-yellow); border-radius: 10px;">🔧 Wrench Set</li>
+					<li style="padding: 1rem; background: var(--primary-yellow); border-radius: 10px;">📏 Measuring Tape</li>
+					<li style="padding: 1rem; background: var(--primary-yellow); border-radius: 10px;">📐 Level</li>
+					<li style="padding: 1rem; background: var(--primary-yellow); border-radius: 10px;">🪛 Screwdriver Set</li>
+				</ul>
+			</section>
 		</main>
-		<Footer />
+		<Footer/>
 	</body>
 </html>
